@@ -635,9 +635,9 @@ local function convert_simple_connection(state, connection, collection_name)
                 -- we expect here exactly one object even for 1:1*
                 -- connections because we processed all-parts-are-null
                 -- situation above
-                assert(#objs == 1 or dont_force_nullability,
-                    'expect one matching object, got ' ..
-                    tostring(#objs))
+                -- assert(#objs == 1 or dont_force_nullability,
+                --     'expect one matching object, got ' ..
+                --     tostring(#objs))
                 return objs[1]
             else -- c.type == '1:N'
                 return objs
@@ -858,8 +858,8 @@ local function convert_multihead_connection(state, connection, collection_name)
                 -- we expect here exactly one object even for 1:1*
                 -- connections because we processed all-parts-are-null
                 -- situation above
-                assert(#objs == 1, 'expect one matching object, got ' ..
-                    tostring(#objs))
+                -- assert(#objs == 1, 'expect one matching object, got ' ..
+                --     tostring(#objs))
 
                 -- this 'wrapping' is needed because we use 'select' on
                 -- 'collection' GraphQL type and the result of the resolve function

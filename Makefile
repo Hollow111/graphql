@@ -69,5 +69,5 @@ rpm:
 		--vendor "Tarantool team" \
 		--depends "tarantool >= 1.9.0" \
 		-m "Pavel Yudin <pavel@tarantool.org>" \
-		--version `git describe --abbrev=0 || echo "0.1.4"` \
+		--version `git describe --abbrev=0 || echo "0.1.5"` \
 		graphql
