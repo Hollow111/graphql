@@ -175,6 +175,11 @@ local function get_index(collection_name, index_name)
                 local func_name = 'accessor_shard.get_index.<index>.pairs'
                 local opts = opts or {}
                 opts.limit = opts.limit or LIMIT
+                if value then
+                    if (index_name == 'primary' or index_name == 0) and type(value[1]) ~= 'string' then
+                        value[1] = tostring(value[1])
+                    end
+                end
                 local tuples, err = shard:secondary_select(collection_name,
                     index_name, opts, value, 0)
                 shard_check_error(func_name, tuples, err)
